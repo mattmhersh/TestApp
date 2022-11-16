@@ -1,6 +1,7 @@
 # action.yml
 name: 'Build Image'
 description: 'Build TestApp Application Image'
+on: [push]
 runs:
   using: 'docker'
   image: 'Dockerfile'
