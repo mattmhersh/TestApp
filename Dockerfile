@@ -1,7 +1,9 @@
 FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine AS base
 WORKDIR /app
 EXPOSE 80
-RUN apk update krb5
+RUN apk update && \
+    apk upgrade && \
+    apk add krb5-libs>1.19.4-r0
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0-alpine AS build
 WORKDIR /src
